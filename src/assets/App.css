@@ -2,6 +2,12 @@ body{
   background-color: #00203FFF;
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -730,66 +736,94 @@ button:hover {
   margin: 0; 
 }
 
-
-/* Example media query for devices with a max-width of 768px (tablets) */
-@media screen and (max-width: 768px) {
+/*responsive*/
+@media (max-width: 992px) {
+  body {
+    font-size: 17px; 
+  }
   .header, .navigation, .right-nav {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+  }
+  .navigation a, .right-nav button {
+    margin: 5px; 
   }
 
-  .movies-container, .show-container, .actors-container, .cinema-container {
-    flex-direction: column;
-    align-items: center;
+  h1, h2, h3, h4 {
+    font-size: calc(100% + 1vw); 
   }
 
   .movie-listing-page, .show-listing-page {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr); 
   }
-
-  .movie-details-page, .show-details-page {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .movie-details-large-poster, .show-details-large-poster {
-    margin-bottom: 20px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    margin-bottom: 20px;
+  .movie-listing-card, .show-listing-card {
+    width: auto;
   }
 }
 
-/* Smaller devices (phones, less than 600px) */
-@media screen and (max-width: 600px) {
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; 
+  }
+  .header, .navigation, .right-nav {
+    flex-direction: row;
+  }
+  .navigation a, .right-nav button {
+    margin-bottom: 10px; 
+  }
+  .hero-section, .featured-movies-section, .featured-show-section, .actor-spotlight-section, .cinema-spotlight-section {
+    padding: 10px; 
+  }
+
   .movie-listing-page, .show-listing-page {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); 
   }
-
-  .movie-card, .show-card, .actor, .cinema {
-    width: 100%;
-    margin: 8px auto;
-  }
-
-  .movie-image, .show-image {
-    height: auto;
+  .movie-listing-card, .show-listing-card {
+    width: auto;
   }
 }
 
-/* Base styles for movies and shows container */
-.movies-container, .show-container {
+@media (max-width: 576px) {
+  .movie-listing-page, .show-listing-page {
+    grid-template-columns: 1fr; 
+  }
+  .navigation a, .right-nav button {
+    padding: 8px 12px;
+  }
+  h1, h2, h3, h4 {
+    font-size: calc(100% + 0.5vw);
+  }
+}
+
+
+.hamburger-menu {
+  display: none; 
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.navigation.show {
   display: flex;
-  flex-wrap: nowrap; /* Prevents the items from wrapping */
-  overflow-x: auto; /* Enables horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
-  scrollbar-width: none; /* Firefox */
-  margin-left: 4px;
-  margin-right: 4px;
+  flex-direction: column;
 }
 
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block; 
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column; 
+  }
+
+  .navigation.show {
+    display: flex; 
+  }
+
+  .navigation a:hover {
+    background-color: #0055B8; 
+    border-radius: 4px;
+  }
+}

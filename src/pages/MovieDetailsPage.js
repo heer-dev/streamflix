@@ -6,6 +6,7 @@ const MovieDetailsPage = () => {
     <div>
       <Header/>
       <MovieDetails/>
+      
     </div>
   )
 }
