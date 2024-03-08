@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1904b56b.css",
+    "main.js": "/static/js/main.76f2fd04.js",
+    "static/media/spotlight4.jpg": "/static/media/spotlight4.59556c56d535e1dea998.jpg",
+    "static/media/actor1.jpeg": "/static/media/actor1.d0f3d39bc1a4f0e45616.jpeg",
+    "static/media/poster2.webp": "/static/media/poster2.9e64be9e18fc6d4d67df.webp",
+    "static/media/actor5.webp": "/static/media/actor5.b6d145d68ca7fc66d28c.webp",
+    "static/media/poster1.jpg": "/static/media/poster1.0d9b45d9be2fed36de21.jpg",
+    "static/media/spotlight5.jpg": "/static/media/spotlight5.12a4af4fa65f383d1273.jpg",
+    "static/media/spotlight2.jpg": "/static/media/spotlight2.a365c8d5bc9a162e5980.jpg",
+    "static/media/actor3.jpg": "/static/media/actor3.d08039a21b39f62ee48f.jpg",
+    "static/media/logo1.png": "/static/media/logo1.50fb1d73581240d8615f.png",
+    "static/media/spotlight3.jpg": "/static/media/spotlight3.b9ab5ca026981a4b4d57.jpg",
+    "static/media/poster3.jpg": "/static/media/poster3.f5baa98dcd79e5391957.jpg",
+    "static/media/spotlight1.webp": "/static/media/spotlight1.0a226b06f6da00ca0893.webp",
+    "static/media/actor2.jpg": "/static/media/actor2.1050852313c62d2e90d0.jpg",
+    "static/media/logo.PNG": "/static/media/logo.110e7ab130076b8a02ea.PNG",
+    "static/media/apple.png": "/static/media/apple.84c43e6880001835ec4d.png",
+    "static/media/GooglePlay.png": "/static/media/GooglePlay.f34797d9f8fd71a803b7.png",
+    "index.html": "/index.html",
+    "main.1904b56b.css.map": "/static/css/main.1904b56b.css.map",
+    "main.76f2fd04.js.map": "/static/js/main.76f2fd04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1904b56b.css",
+    "static/js/main.76f2fd04.js"
+  ]
+}
