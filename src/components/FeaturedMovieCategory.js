@@ -20,7 +20,7 @@ const FeaturedMoviesCategory = () => {
       <h2 className='featured-movies-section-h2'>Featured Movies</h2>
       <div className="movies-container" >
         {featuredMovies.map(movie => (
-          <MovieCard key={movie.id} {...movie} />
+          <MovieCard key={movie.id} {...movie} className="movies" />
         ))}
       </div>
     </div>

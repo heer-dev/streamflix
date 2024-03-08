@@ -167,9 +167,12 @@ button:hover {
 }
 
 /*featured movie*/
+
+
 .featured-movies-section {
   padding: 20px;
   background-image: linear-gradient(#090979, #047dc6);
+  
 }
 
 .featured-movies-section-h2{
@@ -181,27 +184,17 @@ button:hover {
 }
 .movies-container {
   display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
 }
 
-.movie-card {
-  width: 250px; 
-  margin: 8px;
-  border-radius: 8px;
+.movie-title {
+  margin: 8px 0;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-  background-color: #F4976C;
-  box-shadow: 0 10px 10px rgba(6, 6, 6, 0.1);
+  font-size: 21px;
 }
-
-.movie-image {
-  width: 100%;
-  height: 250px; 
-  display: block;
-  object-fit: cover; 
-}
-
 .movie-tag {
   position: absolute;
   top: 8px;
@@ -213,31 +206,37 @@ button:hover {
   border-radius: 4px;
 }
 
-.movie-title {
-  margin: 8px 0;
+
+.movies-container::-webkit-scrollbar {
+  display: none; 
+}
+
+
+.movie-card {
+  width: 250px; 
+  margin: 8px; 
+  border-radius: 8px;
   text-align: center;
-  font-weight: bolder;
-  font-size: 21px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #F4976C;
+  box-shadow: 0 10px 10px rgba(6, 6, 6, 0.1);
+  flex: 0 0 auto;
 }
 
-
-.movie-listing-page {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-}
-
-
-.movie-card:hover {
-  transform: scale(1.05);
+.movie-image {
+  width: 100%;
+  height: 250px; 
+  display: block;
+  object-fit: cover;
 }
 
 /*Featured show*/
 .featured-show-section {
   padding: 20px;
   background-image: linear-gradient(#090979, #047dc6);
-  margin-top: 20px;
+  overflow: hidden;
 }
 .featured-show-section-h2{
   padding-top: 0;
@@ -248,11 +247,18 @@ button:hover {
 }
 .show-container {
   display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+.show-container::-webkit-scrollbar {
+  display: none; 
 }
 
 .show-card {
   width: 250px; 
-  margin: 8px;
+  margin: 8px; 
   border-radius: 8px;
   text-align: center;
   position: relative;
@@ -260,13 +266,14 @@ button:hover {
   padding: 20px;
   background-color: #F4976C;
   box-shadow: 0 10px 10px rgba(6, 6, 6, 0.1);
+  flex: 0 0 auto;
 }
 
 .show-image {
   width: 100%;
   height: 250px; 
   display: block;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .show-tag {
@@ -426,7 +433,7 @@ button:hover {
   margin-top: 8px;
   color: white;
   font-size: 21px; 
-  text-align: center;
+  text-align: left;
 }
 .cinema:hover{
   transform: scale(1.05);
@@ -719,3 +726,67 @@ button:hover {
   text-align: justify;
   margin: 0; 
 }
+
+
+/* Example media query for devices with a max-width of 768px (tablets) */
+@media screen and (max-width: 768px) {
+  .header, .navigation, .right-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movies-container, .show-container, .actors-container, .cinema-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-listing-page, .show-listing-page {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .movie-details-page, .show-details-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-details-large-poster, .show-details-large-poster {
+    margin-bottom: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+/* Smaller devices (phones, less than 600px) */
+@media screen and (max-width: 600px) {
+  .movie-listing-page, .show-listing-page {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card, .show-card, .actor, .cinema {
+    width: 100%;
+    margin: 8px auto;
+  }
+
+  .movie-image, .show-image {
+    height: auto;
+  }
+}
+
+/* Base styles for movies and shows container */
+.movies-container, .show-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents the items from wrapping */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+  scrollbar-width: none; /* Firefox */
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
