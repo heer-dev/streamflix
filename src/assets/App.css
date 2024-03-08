@@ -795,7 +795,7 @@ button:hover {
   }
 }
 
-
+/* Base styles */
 .hamburger-menu {
   display: none; 
   cursor: pointer;
@@ -826,4 +826,34 @@ button:hover {
     background-color: #0055B8; 
     border-radius: 4px;
   }
+}
+
+.navigation a, .navigation a:visited {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block; 
+  background-color: #3F72AF;
+  font-weight: bold;
+}
+
+.navigation a:hover {
+  background-color: #0055B8;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block; 
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column; 
+  }
+
+  .navigation.show {
+    display: flex; 
+  }
+
 }
