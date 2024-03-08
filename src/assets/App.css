@@ -232,6 +232,9 @@ button:hover {
   object-fit: cover;
 }
 
+.movie-card:hover {
+  transform: scale(1.05);
+}
 /*Featured show*/
 .featured-show-section {
   padding: 20px;
