@@ -7,7 +7,7 @@ const MovieDetails = () => {
   const { id } = useParams(); 
   
   useEffect(() => {
-    fetch(`http://localhost:4000/movieListing/${id}`) 
+    fetch(`https://good-teal-reindeer-vest.cyclic.app/movieListing/${id}`) 
       .then(response => response.json())
       .then(data => setDetails(data))
       .catch(error => console.error('Error fetching details:', error));

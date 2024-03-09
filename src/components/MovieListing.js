@@ -11,7 +11,7 @@ const MovieListing = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:4000/movieListing')
+    fetch('https://good-teal-reindeer-vest.cyclic.app/movieListing')
       .then(response => response.json())
       .then(data => setListings(data))
       .catch(error => console.error('Error fetching data:', error));

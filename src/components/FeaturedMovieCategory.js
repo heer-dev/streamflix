@@ -7,7 +7,7 @@ const FeaturedMoviesCategory = () => {
 
   
   useEffect(() => {
-    fetch('http://localhost:4000/featuredMovies')
+    fetch('https://good-teal-reindeer-vest.cyclic.app/featuredMovies')
       .then(response => response.json())
       .then(data => setFeaturedMovies(data))
       .catch(error => {
