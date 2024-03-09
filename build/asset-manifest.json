@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.1904b56b.css",
+    "main.css": "/static/css/main.3f141e6c.css",
     "main.js": "/static/js/main.76f2fd04.js",
     "static/media/spotlight4.jpg": "/static/media/spotlight4.59556c56d535e1dea998.jpg",
     "static/media/actor1.jpeg": "/static/media/actor1.d0f3d39bc1a4f0e45616.jpeg",
@@ -19,11 +19,11 @@
     "static/media/apple.png": "/static/media/apple.84c43e6880001835ec4d.png",
     "static/media/GooglePlay.png": "/static/media/GooglePlay.f34797d9f8fd71a803b7.png",
     "index.html": "/index.html",
-    "main.1904b56b.css.map": "/static/css/main.1904b56b.css.map",
+    "main.3f141e6c.css.map": "/static/css/main.3f141e6c.css.map",
     "main.76f2fd04.js.map": "/static/js/main.76f2fd04.js.map"
   },
   "entrypoints": [
-    "static/css/main.1904b56b.css",
+    "static/css/main.3f141e6c.css",
     "static/js/main.76f2fd04.js"
   ]
 }

@@ -731,7 +731,7 @@ button:hover {
 /*responsive*/
 @media (max-width: 992px) {
   .footer-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   .footer-section {
@@ -792,7 +792,7 @@ button:hover {
   }
 }
 
-
+/* Base styles */
 .hamburger-menu {
   display: none; 
   cursor: pointer;
