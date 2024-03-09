@@ -451,12 +451,13 @@ button:hover {
 
 /*footer*/
 .footer {
-  background-color: #00203FFF;
+  background-color: rgb(8, 42, 76);
   color: white;
-  padding: 20px 0;
+  padding-top: 20px 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 0;
 }
 
 .footer-content {
