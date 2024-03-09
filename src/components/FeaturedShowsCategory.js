@@ -6,7 +6,7 @@ const FeaturedShowsCategory = () => {
   const [featuredShows, setFeaturedShows] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/featuredShows')
+    fetch('https://good-teal-reindeer-vest.cyclic.app/featuredShows')
       .then(response => response.json())
       .then(data => setFeaturedShows(data))
       .catch(error => {
