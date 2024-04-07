@@ -1,32 +1,24 @@
 import React, { useState } from 'react';
-import RegistrationForm from './RegistrationForm';
-import LoginForm from './LoginForm';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import "../assets/App.css"
 
 const NavigationBar = () => {
-  const [showForm, setShowForm] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const history = useHistory();
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleShowRegistration = (e) => {
-    e.preventDefault();
-    setShowForm('register');
-    setIsMenuOpen(false); // Close the menu
+  const handleSearch = (e) => {
+    e.preventDefault(); 
+    if (!searchQuery) return; 
+    history.push(`/search?query=${searchQuery}`); 
+    setSearchQuery('');
   };
-
-  const handleShowLogin = (e) => {
-    e.preventDefault();
-    setShowForm('login');
-    setIsMenuOpen(false); // Close the menu
-  };
-
-  const handleClose = () => {
-    setShowForm(null);
-  };
-
   return (
     <header className="header">
       <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
@@ -34,11 +26,18 @@ const NavigationBar = () => {
         <Link to="/" key="home">Home</Link>
         <Link to="/MovieListing" key="movies">Movies</Link>
         <Link to="/ShowListing" key="tvShows">TvShows</Link>
-        <a href="#" onClick={handleShowRegistration}>SignUp</a>
-        <a href="#" onClick={handleShowLogin}>SignIn</a>
+        <Link to="/Register" key="Registration">Sign Up</Link>
+        <Link to="/login">Sign In</Link>
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button type="submit">Search</button>
+        </form>
       </nav>
-      {showForm === 'register' && <RegistrationForm onClose={handleClose} />}
-      {showForm === 'login' && <LoginForm onClose={handleClose} />}
     </header>
   );
 };

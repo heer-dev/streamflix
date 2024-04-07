@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 import '../assets/App.css'; 
 
 const MovieDetails = () => {
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState(null);
   const { id } = useParams(); 
   
   useEffect(() => {
-    fetch(`https://good-teal-reindeer-vest.cyclic.app/movieListing/${id}`) 
+    fetch(`https://streamflic-backend-827287f6aade.herokuapp.com/media/${id}`) 
       .then(response => response.json())
       .then(data => setDetails(data))
       .catch(error => console.error('Error fetching details:', error));
@@ -15,24 +15,24 @@ const MovieDetails = () => {
   
   if (details) {
     const { 
-      title = '', 
+      name = '', 
       synopsis = '', 
-      poster = '', 
+      largePosterPath = '', 
       rentPrice = '', 
       purchasePrice = '' 
     } = details;
     
     return (
-      <div className='movie-details'>
-        <div className="movie-details-page">
-  <img src={poster} alt={`${title} Poster`} className="movie-details-large-poster" />
-  <div className="movie-details-text">
-    <h1 className="movie-details-title">{title}</h1>
-    <div className="movie-details-purchase-info">
-      <button className="movie-details-rent-button">Rent ${rentPrice}</button>
-      <button className="movie-details-buy-button">Buy ${purchasePrice}</button>
+      <div className='media-details'>
+        <div className="media-details-page">
+  <img src={largePosterPath} alt={`${name} largePosterPath`} className="media-details-large-poster" />
+  <div className="media-details-text">
+    <h1 className="media-details-title">{name}</h1>
+    <div className="media-details-purchase-info">
+      <button className="media-details-rent-button">Rent ${rentPrice}</button>
+      <button className="media-details-buy-button">Buy ${purchasePrice}</button>
     </div>
-    <p className="movie-details-synopsis">{synopsis}</p>
+    <p className="media-details-synopsis">{synopsis}</p>
   </div>
       </div>
       </div>

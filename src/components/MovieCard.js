@@ -1,16 +1,16 @@
 import React from 'react';
 import '../assets/App.css'; 
 
-const MovieCard = ({ title, image, tag }) => {
+const ShowCard = ({ name, smallPosterPath, tag }) => {
   return (
-    <div className="movie-card">
-      <div className="movie-image-container">
-        <img src={image} alt={title} className="movie-image" />
-        {tag && <span className="movie-tag">{tag}</span>}
+    <div className="show-card">
+      <div className="show-image-container">
+        <img src={smallPosterPath} alt={name} className="show-image" />
+        {tag && <span className="show-tag">{tag}</span>}
       </div>
-      <h3 className="movie-title">{title}</h3>
+      <h3 className="show-title">{name}</h3>
     </div>
   );
 };
 
-export default MovieCard;
+export default ShowCard;

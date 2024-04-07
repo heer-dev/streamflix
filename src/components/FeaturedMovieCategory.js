@@ -1,27 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
-import '../assets/App.css'; 
+import '../assets/App.css';
 
 const FeaturedMoviesCategory = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  
   useEffect(() => {
-    fetch('https://good-teal-reindeer-vest.cyclic.app/featuredMovies')
-      .then(response => response.json())
-      .then(data => setFeaturedMovies(data))
-      .catch(error => {
+    const fetchFeaturedMovies = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("https://streamflic-backend-827287f6aade.herokuapp.com/media/featured?type=movies");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setFeaturedMovies(data);
+      } catch (error) {
         console.error('Error fetching featured movies:', error);
-      });
+        setError('Failed to fetch featured movies');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+  
+    fetchFeaturedMovies();
   }, []);
 
+  if (error) {
+    return <div className="error-message">{error}</div>;
+  }
+
+  if (isLoading) {
+    return <div className="loading-message">Loading...</div>;
+  }
+  
   return (
     <div className="featured-movies-section">
       <h2 className='featured-movies-section-h2'>Featured Movies</h2>
-      <div className="movies-container" >
-        {featuredMovies.map(movie => (
-          <MovieCard key={movie.id} {...movie} className="movies" />
-        ))}
+      <div className="movies-container">
+        {featuredMovies.length > 0 ? (
+          featuredMovies.map(movie => (
+            <MovieCard key={movie.id} {...movie} />
+          ))
+        ) : (
+          <div>No featured movies available.</div>
+        )}
       </div>
     </div>
   );

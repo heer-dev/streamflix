@@ -1,14 +1,14 @@
 import React from 'react';
 import '../assets/App.css'; 
 
-const ShowCard = ({ title, image, tag }) => {
+const ShowCard = ({ name, smallPosterPath, tag }) => {
   return (
     <div className="show-card">
       <div className="show-image-container">
-        <img src={image} alt={title} className="show-image" />
+        <img src={smallPosterPath} alt={name} className="show-image" />
         {tag && <span className="show-tag">{tag}</span>}
       </div>
-      <h3 className="show-title">{title}</h3>
+      <h3 className="show-title">{name}</h3>
     </div>
   );
 };

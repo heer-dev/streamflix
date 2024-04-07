@@ -20,6 +20,7 @@ body{
 .header img.logo {
   height: 70px;
   width: 190px; 
+  padding: 0;
 }
 
 .navigation {
@@ -44,92 +45,108 @@ body{
   border-radius: 4px;
 }
 
-.right-nav {
+
+/* Search form specific styles */
+.navigation form {
   display: flex;
   align-items: center;
-  background-color: #3F72AF;
 }
 
-.right-nav button {
-  margin-left: 10px; 
-  padding: 10px 20px; 
-  font-size: 1em; 
-  font-weight: bold; 
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease; 
+.navigation input[type='text'] {
+  padding: 8px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px; 
+  outline: none;
 }
-.right-nav button.sign-up {
-  background-color: #F4976C; 
+
+.navigation button[type='submit'] {
+  padding: 8px 10px; 
+  background-color: #007bff; 
   color: white;
-}
-
-.right-nav button.sign-up:hover {
-  background-color: #FCCD04; 
-}
-
-.right-nav button.sign-in {
-  background-color: #3F72AF; 
-  color: white;
-}
-
-.right-nav button.sign-in:hover {
-  background-color: #0055B8; 
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; 
-}
-
-.modal-content {
-  background-color: #3F72AF;
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  width: 50%;
-  min-width: 300px; 
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='password'] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid white;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #F4976C;
-  color: white;
+  width: 90px;
+  height: 38px;
   border: none;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
+  font-size: 14px; 
+  transition: background-color 0.2s; 
+  position: relative;
 }
 
-button:hover {
-  background-color: #FCCD04;
-  opacity: 0.9;
+.navigation input[type='text'] {
+  flex-grow: 1; 
+  margin: 0; 
+}
+
+.navigation button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+
+.auth-form-container {
+  background-color: #fff;
+  max-width: 350px;
+  margin: 30px auto;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form-header {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.auth-form label {
+  display: block;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.auth-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.auth-form-footer button,
+.auth-form-footer a.button-link {
+  width: auto;
+  padding: 8px 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none; /* Removes underline from links */
+  margin-top: 10px; /* Add some space above the button */
+}
+
+.auth-form-footer button:hover,
+.auth-form-footer a.button-link:hover {
+  background-color: #0056b3;
 }
 
 /*Hero Section*/
@@ -173,7 +190,6 @@ button:hover {
 }
 
 /*featured movie*/
-
 
 .featured-movies-section {
   padding: 20px;
@@ -574,261 +590,257 @@ button:hover {
 }
 
 /*Movie-details*/
-.movie-details{
-  background-color:#00203FFF;
-  padding-top: 0%;
-}
-
-.movie-details-page {  
-  background-color:#e66465;
+.media-details-page {  
+  background: linear-gradient(to right, #000000, transparent);
+  color: #ffffff;
   padding: 30px;
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 20px auto;
-  display: flex;
-  border: 2px solid;
-  padding: 10px;
-  box-shadow: 6px 4px 8px;
-}
-
-.movie-details-header {
+  font-family: 'Arial', sans-serif;
+  width: 95%;
+  height: 450px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #000;
   margin-bottom: 20px;
-}
-
-.movie-details-large-poster {
-  flex: 1;
-  width: 300px; 
-  height: 450px;
-  object-fit: cover;
   border-radius: 10px;
-  margin-right: 20px; 
+  box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.movie-details-text {
-  flex: 2;
+.media-details-large-poster {
+  width: 59.66%; 
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.media-details-text {
+  width: 33.33%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: Georgia, serif;
-}
-
-.movie-details-title {
-  text-align: center;
-  padding-bottom: 70px;
-  margin-bottom: 20px;
-  font-family: Georgia, serif;
-  font-size: 40px;
-}
-
-.movie-details-purchase-info {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.movie-details-rent-button,
-.movie-details-buy-button {
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.movie-details-rent-button {
-  background-color: #f07f7f;
-  width: 110px;
-}
-
-.movie-details-buy-button {
-  background-color: #f07f7f;
-  width: 110px;
-}
-
-.movie-details-synopsis {
-  text-align: justify;
-  margin: 0; 
-}
-
-
-/*show details*/
-.show-details{
-  background-color:#00203FFF;
-  padding-top: 0%;
-}
-
-.show-details-page {  
-  background-color: #e66465;
-  padding: 30px;
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 20px auto;
-  display: flex;
-  border: 2px solid;
-  padding: 10px;
-  box-shadow: 6px 4px 8px;
-}
-
-.show-details-header {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.show-details-large-poster {
-  flex: 1;
-  width: 300px; 
-  height: 450px;
-  object-fit: cover;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  margin-right: 20px; 
+  overflow: hidden;
 }
 
-.show-details-text {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: Georgia, serif;
-}
-
-.show-details-title {
-  text-align: center;
-  padding-bottom: 70px;
-  margin-bottom: 20px;
-  font-family: Georgia, serif;
-  font-size: 40px;
-}
-
-.show-details-purchase-info {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.show-details-rent-button,
-.show-details-buy-button {
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
+.media-details-title {
+  font-family: 'Georgia', serif;
+  font-size: 48px;
   font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.show-details-rent-button {
-  background-color: #f07f7f;
-  width: 110px;
-}
-
-.show-details-buy-button {
-  background-color: #f07f7f;
-  width: 110px;
-}
-
-.show-details-synopsis {
+.media-details-synopsis {
   text-align: justify;
-  margin: 0; 
+  padding: 20px;
+  flex-grow: 1;
 }
 
-/*responsive*/
-@media (max-width: 992px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-section {
-    margin-bottom: 20px;
-  }
-  .navigation, .right-nav {
-    flex-direction: row;
-    align-items: center;
-  }
-  .navigation a, .right-nav button {
-    margin: 5px; 
-  }
-
-  h1, h2, h3, h4 {
-    font-size: calc(100% + 1vw); 
-  }
-
-  .movie-listing-page, .show-listing-page {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-  .movie-listing-card, .show-listing-card {
-    width: auto;
-  }
+.media-details-rent-button,
+.media-details-buy-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
+.media-details-rent-button:hover,
+.media-details-buy-button:hover {
+  background-color: #333;
+}
 
 @media (max-width: 768px) {
+  .media-details-page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .media-details-large-poster {
+    width: 100%;
+    height: auto;
+  }
+
+  .media-details-text {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Dashboard.css */
+.dashboard {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  background: #fff;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-image {
+  border-radius: 50%;
+  margin-right: 1em;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.user-name {
+  margin: 0;
+}
+
+.user-email {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.dashboard-main {
+  padding: 1em;
+}
+
+.greetings {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.dashboard-message {
+  text-align: center;
+  padding-top: 2em;
+  color: #dc3545;
+}
+
+.subscription-details {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-details h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5em;
+}
+
+
+/*responsive*/
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
   body {
-    font-size: 14px; 
+    font-size: 14px;
   }
-  .header, .navigation, .right-nav {
-    flex-direction: row;
+
+  .header {
+    flex-direction: column;
+    text-align: center;
   }
-  .navigation a, .right-nav button {
-    margin-bottom: 10px; 
+
+  .user-profile-section, .logout-button {
+    margin-bottom: 10px;
   }
-  .hero-section, .featured-movies-section, .featured-show-section, .actor-spotlight-section, .cinema-spotlight-section {
-    padding: 10px; 
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation a, .auth-form-footer a, .auth-form-footer button {
+    margin: 5px 0; /* Adjust margin for stacked navigation links/buttons */
+  }
+
+  .dashboard-main, .subscription-details, .movies-container, .show-container, .actors-container, .cinema-container {
+    flex-direction: column;
+  }
+
+  .movie-card, .show-card, .actor, .cinema {
+    margin: 0 auto; /* Center items */
+    margin-bottom: 20px; /* Add space between items */
   }
 
   .movie-listing-page, .show-listing-page {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
   }
-  .movie-listing-card, .show-listing-card {
-    width: auto;
+
+  .media-details-page {
+    flex-direction: column;
+  }
+
+  .media-details-large-poster, .media-details-text {
+    width: 100%; /* Full width for flex children */
   }
 }
 
+/* Further adjustments for even smaller screens */
 @media (max-width: 576px) {
+  .hero-section, .featured-movies-section, .featured-show-section, .actor-spotlight-section, .cinema-spotlight-section {
+    padding: 10px;
+  }
+
   .movie-listing-page, .show-listing-page {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /* Single column layout */
   }
-  .navigation a, .right-nav button {
-    padding: 8px 12px;
+
+  .hamburger-menu {
+    display: block;
   }
-  h1, h2, h3, h4 {
-    font-size: calc(100% + 0.5vw);
+
+  .navigation {
+    display: none; /* Initially hide navigation */
+  }
+
+  .navigation.show {
+    display: flex; /* Show navigation when toggled */
   }
 }
 
-
+/* Styles for Hamburger Menu */
 .hamburger-menu {
-  display: none; 
+  display: none;
   cursor: pointer;
   font-size: 24px;
 }
 
-.navigation.show {
-  display: flex;
-  flex-direction: column;
-}
-
 @media (max-width: 768px) {
   .hamburger-menu {
-    display: block; 
+    display: block;
   }
-
-  .navigation {
-    display: none;
-    flex-direction: column; 
-  }
-
+  
   .navigation.show {
-    display: flex; 
-  }
-
-  .navigation a:hover {
-    background-color: #0055B8; 
-    border-radius: 4px;
+    display: flex;
   }
 }
