@@ -12,24 +12,50 @@ const Registration = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords don't match");
-      return;
-    }
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if (password !== confirmPassword) {
+    alert("Passwords don't match");
+    return;
+  }
+
+  if (!passwordRegex.test(password)) {
+    alert("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+    return;
+  }
   
-    const response = await fetch('https://streamflic-backend-827287f6aade.herokuapp.com/customers/register', {
+  try {
+    const response = await fetch('http://localhost:8080/customers/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName, lastName, email, password })
     });
   
-    if (response.ok) {
-      alert('Registration successful, you will be redirected to the login page.');
-      setTimeout(() => {
-        history.push('/login');
-      }, 2000); 
+  const contentType = response.headers.get("content-type");
+    let data;
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+     data = await response.json();
     } else {
-      alert('Failed to register. Please try again.');
+      data = await response.text(); 
+    }
+  
+      if (response.ok) {
+        alert('Registration successful, you will be redirected to the login page.');
+        setTimeout(() => {
+          history.push('/login');
+        }, 2000); 
+      } else {
+        const message = data.message || data;
+        if (message.includes('email already in use')) {
+          alert('This email is already in use. Please log in instead.');
+          history.push('/login');
+        } else {
+          alert(message || 'Failed to register. Please try again.');
+        }
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert('An error occurred during registration. Please try again later.');
     }
   };
 

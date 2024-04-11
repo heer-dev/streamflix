@@ -16,7 +16,7 @@ const MovieListing = () => {
     const fetchListings = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("https://streamflic-backend-827287f6aade.herokuapp.com/media/movies");
+        const response = await fetch("http://localhost:8080/media/movies");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

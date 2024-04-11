@@ -12,7 +12,7 @@ const LogIn = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('https://streamflic-backend-827287f6aade.herokuapp.com/customers/authenticate', {
+        const response = await fetch('http://localhost:8080/customers/authenticate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

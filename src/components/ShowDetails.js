@@ -10,7 +10,7 @@ const MediaDetails = () => {
   
   useEffect(() => {
     setIsLoading(true); // Begin loading state
-    fetch(`https://streamflic-backend-827287f6aade.herokuapp.com/media/${id}`) 
+    fetch(`http://localhost:8080/media/${id}`) 
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

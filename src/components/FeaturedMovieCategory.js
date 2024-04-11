@@ -11,7 +11,7 @@ const FeaturedMoviesCategory = () => {
     const fetchFeaturedMovies = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("https://streamflic-backend-827287f6aade.herokuapp.com/media/featured?type=movies");
+        const response = await fetch("http://localhost:8080/media/featured?type=movies");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

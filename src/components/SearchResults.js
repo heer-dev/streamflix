@@ -19,7 +19,7 @@ const SearchResults = () => {
     if (!query) return;
 
     const fetchResults = async () => {
-      const response = await fetch(`https://streamflic-backend-827287f6aade.herokuapp.com/media/search?title=${query}`);
+      const response = await fetch(`http://localhost:8080/media/search?title=${query}`);
       const data = await response.json();
       setResults(data);
     };
