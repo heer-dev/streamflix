@@ -83,12 +83,21 @@ body{
   background-color: #0056b3;
 }
 
+.search-result-not-found {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
 
 .auth-form-container {
   background-color: #fff;
   max-width: 350px;
   margin: 30px auto;
   padding: 40px;
+  margin-top: 70px;
+  margin-bottom: 90px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -140,8 +149,8 @@ body{
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  text-decoration: none; /* Removes underline from links */
-  margin-top: 10px; /* Add some space above the button */
+  text-decoration: none; 
+  margin-top: 10px; 
 }
 
 .auth-form-footer button:hover,
@@ -780,7 +789,7 @@ body{
   }
 
   .navigation a, .auth-form-footer a, .auth-form-footer button {
-    margin: 5px 0; /* Adjust margin for stacked navigation links/buttons */
+    margin: 5px 0; 
   }
 
   .dashboard-main, .subscription-details, .movies-container, .show-container, .actors-container, .cinema-container {
@@ -788,12 +797,12 @@ body{
   }
 
   .movie-card, .show-card, .actor, .cinema {
-    margin: 0 auto; /* Center items */
-    margin-bottom: 20px; /* Add space between items */
+    margin: 0 auto; 
+    margin-bottom: 20px; 
   }
 
   .movie-listing-page, .show-listing-page {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
   }
 
   .media-details-page {
@@ -801,18 +810,17 @@ body{
   }
 
   .media-details-large-poster, .media-details-text {
-    width: 100%; /* Full width for flex children */
+    width: 100%; 
   }
 }
 
-/* Further adjustments for even smaller screens */
 @media (max-width: 576px) {
   .hero-section, .featured-movies-section, .featured-show-section, .actor-spotlight-section, .cinema-spotlight-section {
     padding: 10px;
   }
 
   .movie-listing-page, .show-listing-page {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr; 
   }
 
   .hamburger-menu {
@@ -820,11 +828,11 @@ body{
   }
 
   .navigation {
-    display: none; /* Initially hide navigation */
+    display: none; 
   }
 
   .navigation.show {
-    display: flex; /* Show navigation when toggled */
+    display: flex;
   }
 }
 

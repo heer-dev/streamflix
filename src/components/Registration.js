@@ -25,7 +25,7 @@ const Registration = () => {
   }
   
   try {
-    const response = await fetch('http://localhost:8080/customers/register', {
+    const response = await fetch('https://streamflic-backend-827287f6aade.herokuapp.com/customers/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName, lastName, email, password })

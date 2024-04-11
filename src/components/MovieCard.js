@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/App.css'; 
 
-const ShowCard = ({ name, smallPosterPath, tag }) => {
+const MovieCard = ({ name, smallPosterPath, tag }) => {
   return (
     <div className="show-card">
       <div className="show-image-container">
@@ -13,4 +13,4 @@ const ShowCard = ({ name, smallPosterPath, tag }) => {
   );
 };
 
-export default ShowCard;
+export default MovieCard;

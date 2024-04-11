@@ -4,13 +4,13 @@ import '../assets/App.css';
 
 const MediaDetails = () => {
   const [details, setDetails] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // State to handle loading
-  const [error, setError] = useState(null); // State to handle error
+  const [isLoading, setIsLoading] = useState(true); 
+  const [error, setError] = useState(null); 
   const { id } = useParams(); 
   
   useEffect(() => {
-    setIsLoading(true); // Begin loading state
-    fetch(`http://localhost:8080/media/${id}`) 
+    setIsLoading(true); 
+    fetch(`https://streamflic-backend-827287f6aade.herokuapp.com/media/${id}`) 
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -19,21 +19,21 @@ const MediaDetails = () => {
       })
       .then(data => {
         setDetails(data);
-        setIsLoading(false); // End loading state
+        setIsLoading(false); 
       })
       .catch(error => {
         console.error('Error fetching details:', error);
         setError(error.message);
-        setIsLoading(false); // End loading state
+        setIsLoading(false);
       });
   }, [id]);
   
   if (isLoading) {
-    return <div>Loading...</div>; // Display loading state
+    return <div>Loading...</div>; 
   }
 
   if (error) {
-    return <div>Error: {error}</div>; // Display error state
+    return <div>Error: {error}</div>; 
   }
   
   if (details) {
@@ -62,7 +62,7 @@ const MediaDetails = () => {
     );
   }
 
-  // If details are not available
+  
   return <div>No media details available.</div>;
 };
 

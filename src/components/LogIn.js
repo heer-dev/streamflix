@@ -1,4 +1,3 @@
-// LoginPage.js
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import "../assets/App.css";
@@ -12,7 +11,7 @@ const LogIn = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:8080/customers/authenticate', {
+        const response = await fetch('https://streamflic-backend-827287f6aade.herokuapp.com/media/featured?type=tvshows/customers/authenticate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

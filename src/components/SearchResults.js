@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import '../assets/App.css'; 
 
 const SearchResults = () => {
@@ -19,7 +18,7 @@ const SearchResults = () => {
     if (!query) return;
 
     const fetchResults = async () => {
-      const response = await fetch(`http://localhost:8080/media/search?title=${query}`);
+      const response = await fetch(`https://streamflic-backend-827287f6aade.herokuapp.com/media/search?title=${query}`);
       const data = await response.json();
       setResults(data);
     };
@@ -29,7 +28,10 @@ const SearchResults = () => {
 
   return (
     <div>
+      <header>
       <Header />
+      </header>
+      <div className='main'>
       <div className="movie-listing-page">
         {results.length > 0 ? (
           results.map((result) => (
@@ -42,7 +44,7 @@ const SearchResults = () => {
           <div className="search-result-not-found">Search Result not found</div>
         )}
       </div>
-      <Footer />
+      </div>
     </div>
   );
 };

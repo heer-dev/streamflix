@@ -13,7 +13,6 @@ const MovieDetailsPage = () => {
       <header>
         <Header/>
       </header>
-      
       <MovieDetails id={id}/>
       <footer>
         <Footer/>

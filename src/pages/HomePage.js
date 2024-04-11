@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header'
-import { useState } from 'react';
 import "../assets/App.css"
 import HeroSection from '../components/HeroSection'
 import FeaturedMoviesCategory from '../components/FeaturedMovieCategory'
@@ -19,13 +18,16 @@ const HomePage = () => {
 
   return (
     <div className='background'>
+      
       <Header />
       <HeroSection slides={slides} />
       <FeaturedMoviesCategory />
       <FeaturedShowsCategory />
       <ActorSpotlight/>
       <CinemaSpotlight/>
-      <Footer />
+      <footer>
+      <Footer/>
+      </footer>
     </div>
   )
 }

@@ -7,7 +7,7 @@ const MovieDetails = () => {
   const { id } = useParams(); 
   
   useEffect(() => {
-    fetch(`http://localhost:8080/media/${id}`) 
+    fetch(`https://streamflic-backend-827287f6aade.herokuapp.com/media/${id}`) 
       .then(response => response.json())
       .then(data => setDetails(data))
       .catch(error => console.error('Error fetching details:', error));

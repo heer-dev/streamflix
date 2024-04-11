@@ -2,7 +2,7 @@ import React from 'react'
 import MovieListing from '../components/MovieListing'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-const ListingPage = () => {
+const MovieListingPage = () => {
   return (
     <div>
       <header>
@@ -16,4 +16,4 @@ const ListingPage = () => {
   )
 }
 
-export default ListingPage
+export default MovieListingPage
