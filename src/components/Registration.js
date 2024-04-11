@@ -9,6 +9,7 @@ const Registration = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const history = useHistory();
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
